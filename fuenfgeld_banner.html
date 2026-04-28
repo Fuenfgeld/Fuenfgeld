@@ -1,0 +1,244 @@
+<div style="width:100%;aspect-ratio:1200/320;position:relative;overflow:hidden">
+<svg viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1;width:100%;height:100%">
+<defs>
+<linearGradient id="pulse-grad" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#00A3E0" stop-opacity="0"/>
+<stop offset="40%" stop-color="#00A3E0" stop-opacity="0.6"/>
+<stop offset="50%" stop-color="#00A3E0" stop-opacity="1"/>
+<stop offset="60%" stop-color="#00A3E0" stop-opacity="0.6"/>
+<stop offset="100%" stop-color="#00A3E0" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="text-shimmer" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#0077B6"/>
+<stop offset="25%" stop-color="#00A3E0"/>
+<stop offset="50%" stop-color="#48CAE4"/>
+<stop offset="75%" stop-color="#00A3E0"/>
+<stop offset="100%" stop-color="#0077B6"/>
+<animate attributeName="x1" values="-1;1" dur="3s" repeatCount="indefinite"/>
+<animate attributeName="x2" values="0;2" dur="3s" repeatCount="indefinite"/>
+</linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="5"/></filter>
+<clipPath id="term-clip"><rect x="22" y="30" width="196" height="260" rx="2"/></clipPath>
+<style>
+@keyframes stroke-loop{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-35%}}
+@keyframes pulse-move{0%{transform:translateX(-400px)}100%{transform:translateX(1600px)}}
+@keyframes letter-in{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes glow-pulse{0%,100%{opacity:0.05}50%{opacity:0.1}}
+@keyframes cursor-blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.letter{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:96px;font-weight:800;fill:url(#text-shimmer);opacity:0;animation:letter-in 0.25s cubic-bezier(0.22,1,0.36,1) forwards}
+.letter-glow{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:96px;font-weight:800;fill:#00A3E0;opacity:0;filter:url(#blur);animation:letter-in 0.25s cubic-bezier(0.22,1,0.36,1) forwards,glow-pulse 3s ease-in-out infinite}
+.name-stroke{fill:none;stroke-width:3px;stroke-dasharray:7% 28%;stroke-dashoffset:0%;animation:stroke-loop 5.5s infinite linear;opacity:0;transition:opacity 0.4s}
+.name-stroke.visible{opacity:1}
+.name-stroke:nth-child(1){stroke:#0077B6;animation-delay:0s}
+.name-stroke:nth-child(2){stroke:#00A3E0;animation-delay:-1.1s}
+.name-stroke:nth-child(3){stroke:#48CAE4;animation-delay:-2.2s}
+.name-stroke:nth-child(4){stroke:#90E0EF;animation-delay:-3.3s}
+.name-stroke:nth-child(5){stroke:#0077B6;animation-delay:-4.4s}
+.subtitle{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;letter-spacing:6px;fill:var(--color-text-secondary,#6b7280);opacity:0;animation:letter-in 0.3s ease-out 0.45s forwards}
+.ecg-line{fill:none;stroke:#00A3E0;stroke-width:1.5;opacity:0.12}
+.ecg-line2{fill:none;stroke:#0077B6;stroke-width:1;opacity:0.06}
+.pulse-sweep{animation:pulse-move 4s linear infinite}
+.term-text{font-family:'Courier New',monospace;font-size:10px;fill:#48CAE4;opacity:0.5}
+.term-cursor{animation:cursor-blink 1s step-end infinite}
+</style>
+</defs>
+
+<g opacity="0.4">
+<path class="ecg-line" d="M0,160 L180,160 L210,140 L215,160 L220,110 L225,190 L230,145 L240,160 L400,160 L430,140 L435,160 L440,110 L445,190 L450,145 L460,160 L600,160 L630,140 L635,160 L640,110 L645,190 L650,145 L660,160 L820,160 L850,140 L855,160 L860,110 L865,190 L870,145 L880,160 L1050,160 L1080,140 L1085,160 L1090,110 L1095,190 L1100,145 L1110,160 L1200,160"/>
+<path class="ecg-line2" d="M0,180 L150,180 L178,170 L182,180 L186,155 L190,195 L194,172 L200,180 L370,180 L398,170 L402,180 L406,155 L410,195 L414,172 L420,180 L590,180 L618,170 L622,180 L626,155 L630,195 L634,172 L640,180 L810,180 L838,170 L842,180 L846,155 L850,195 L854,172 L860,180 L1200,180"/>
+</g>
+<g class="pulse-sweep" opacity="0.4"><rect x="-200" y="90" width="400" height="140" fill="url(#pulse-grad)" opacity="0.12"/></g>
+
+<g opacity="0.45">
+<rect x="18" y="18" width="204" height="284" rx="6" fill="none" stroke="#0077B6" stroke-width="1.5"/>
+<rect x="18" y="18" width="204" height="16" rx="6" fill="#0077B6" opacity="0.15"/>
+<circle cx="30" cy="26" r="3" fill="#EF3340" opacity="0.5"/>
+<circle cx="40" cy="26" r="3" fill="#F5A623" opacity="0.5"/>
+<circle cx="50" cy="26" r="3" fill="#48CAE4" opacity="0.5"/>
+<text font-family="'Courier New',monospace" font-size="7" fill="#00A3E0" opacity="0.6" x="70" y="28">fuenfgeld@health:~</text>
+<g clip-path="url(#term-clip)" id="term-lines">
+</g>
+<rect class="term-cursor" id="term-cursor-rect" x="28" y="40" width="5" height="10" fill="#48CAE4" opacity="0.6"/>
+</g>
+
+<g>
+<text class="letter-glow" text-anchor="middle" x="330" y="155" style="animation-delay:0.02s">F</text>
+<text class="letter-glow" text-anchor="middle" x="398" y="155" style="animation-delay:0.05s">U</text>
+<text class="letter-glow" text-anchor="middle" x="466" y="155" style="animation-delay:0.08s">E</text>
+<text class="letter-glow" text-anchor="middle" x="532" y="155" style="animation-delay:0.11s">N</text>
+<text class="letter-glow" text-anchor="middle" x="604" y="155" style="animation-delay:0.14s">F</text>
+<text class="letter-glow" text-anchor="middle" x="672" y="155" style="animation-delay:0.17s">G</text>
+<text class="letter-glow" text-anchor="middle" x="742" y="155" style="animation-delay:0.20s">E</text>
+<text class="letter-glow" text-anchor="middle" x="804" y="155" style="animation-delay:0.23s">L</text>
+<text class="letter-glow" text-anchor="middle" x="866" y="155" style="animation-delay:0.26s">D</text>
+</g>
+<g>
+<text class="letter" text-anchor="middle" x="330" y="155" style="animation-delay:0.02s">F</text>
+<text class="letter" text-anchor="middle" x="398" y="155" style="animation-delay:0.05s">U</text>
+<text class="letter" text-anchor="middle" x="466" y="155" style="animation-delay:0.08s">E</text>
+<text class="letter" text-anchor="middle" x="532" y="155" style="animation-delay:0.11s">N</text>
+<text class="letter" text-anchor="middle" x="604" y="155" style="animation-delay:0.14s">F</text>
+<text class="letter" text-anchor="middle" x="672" y="155" style="animation-delay:0.17s">G</text>
+<text class="letter" text-anchor="middle" x="742" y="155" style="animation-delay:0.20s">E</text>
+<text class="letter" text-anchor="middle" x="804" y="155" style="animation-delay:0.23s">L</text>
+<text class="letter" text-anchor="middle" x="866" y="155" style="animation-delay:0.26s">D</text>
+</g>
+
+<symbol id="s-text">
+<text text-anchor="middle" x="598" y="155" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="800" letter-spacing="6">FUENFGELD</text>
+</symbol>
+<g id="stroke-group">
+<use href="#s-text" class="name-stroke"/>
+<use href="#s-text" class="name-stroke"/>
+<use href="#s-text" class="name-stroke"/>
+<use href="#s-text" class="name-stroke"/>
+<use href="#s-text" class="name-stroke"/>
+</g>
+
+<text class="subtitle" text-anchor="middle" x="598" y="210">HEALTH INFORMATICS</text>
+
+<g opacity="0.1">
+<path d="M555,260 L560,260 L563,255 L566,265 L569,250 L572,270 L575,258 L578,260 L600,260" fill="none" stroke="#00A3E0" stroke-width="1.5"/>
+<path d="M610,260 L615,260 L618,255 L621,265 L624,250 L627,270 L630,258 L633,260 L650,260" fill="none" stroke="#00A3E0" stroke-width="1.5"/>
+</g>
+</svg>
+
+<canvas id="dna-canvas" width="320" height="640" style="position:absolute;right:5px;top:0;width:120px;height:100%;z-index:2"></canvas>
+
+<script>
+(function(){
+var lines=[
+  '$ python analyze_ehr.py',
+  'Loading FHIR resources...',
+  'Patients: 12,847',
+  'Observations: 384,291',
+  'Conditions: 67,403',
+  '$ grep -c "ICD-10" dx.csv',
+  '24,891',
+  '$ ml-pipeline --train',
+  'Epoch 1/50  loss: 0.847',
+  'Epoch 10/50 loss: 0.312',
+  'Epoch 25/50 loss: 0.089',
+  'Epoch 50/50 loss: 0.024',
+  'AUC: 0.964  F1: 0.91',
+  '$ ssh clinic-node-03',
+  'Connected to HL7 stream',
+  'ADT^A01 messages: 1,204',
+  '$ cat /proc/uptime',
+  '8742103.47 34291840.12',
+  '$ docker ps | head -5',
+  'fhir-server    Up 47d',
+  'redis-cache    Up 47d',
+  'nlp-service    Up 12d',
+  '$ query-snomed "diabetes"',
+  'Found 73 matching concepts',
+  '$ tail -f /var/log/hl7.log',
+];
+var ns='http://www.w3.org/2000/svg';
+var container=document.getElementById('term-lines');
+var cursor=document.getElementById('term-cursor-rect');
+var lineIdx=0,charIdx=0,currentY=44,lineH=13,maxLines=18;
+var displayed=[];
+var typingSpeed=40;
+var lineDelay=600;
+
+function addChar(){
+  if(lineIdx>=lines.length)lineIdx=0;
+  var line=lines[lineIdx];
+  if(charIdx===0){
+    var txt=document.createElementNS(ns,'text');
+    txt.setAttribute('class','term-text');
+    txt.setAttribute('x','28');
+    txt.setAttribute('y',String(currentY));
+    if(line.startsWith('$'))txt.setAttribute('fill','#00A3E0');
+    container.appendChild(txt);
+    displayed.push(txt);
+    if(displayed.length>maxLines){
+      var old=displayed.shift();
+      old.remove();
+      displayed.forEach(function(t){
+        var cy=parseFloat(t.getAttribute('y'));
+        t.setAttribute('y',String(cy-lineH));
+      });
+      currentY-=lineH;
+    }
+  }
+  var current=displayed[displayed.length-1];
+  charIdx++;
+  current.textContent=line.substring(0,charIdx);
+  cursor.setAttribute('x',String(28+charIdx*5.5));
+  cursor.setAttribute('y',String(currentY-9));
+  if(charIdx>=line.length){
+    charIdx=0;
+    lineIdx++;
+    currentY+=lineH;
+    cursor.setAttribute('x','28');
+    cursor.setAttribute('y',String(currentY-9));
+    setTimeout(addChar,lineDelay);
+  } else {
+    setTimeout(addChar,typingSpeed);
+  }
+}
+setTimeout(addChar,800);
+
+var c=document.getElementById('dna-canvas');
+if(!c)return;
+var ctx=c.getContext('2d');
+var W=160,H=320;
+c.width=W*2;c.height=H*2;
+ctx.scale(2,2);
+var cols=['#0077B6','#00A3E0','#48CAE4','#90E0EF'];
+var offset=0,cx=W/2,radius=30,rungs=20,speed=0.012;
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  offset+=speed;
+  var pts=[];
+  for(var i=0;i<rungs;i++){
+    var t=i/rungs;
+    var y=t*H;
+    var angle=t*Math.PI*4+offset;
+    var x1=cx+Math.sin(angle)*radius;
+    var x2=cx+Math.sin(angle+Math.PI)*radius;
+    var z1=Math.cos(angle);
+    var z2=Math.cos(angle+Math.PI);
+    pts.push({y:y,x1:x1,x2:x2,z1:z1,z2:z2,i:i});
+  }
+  for(var i=0;i<pts.length;i++){
+    var p=pts[i];
+    var op=0.15+Math.abs(p.z1)*0.15;
+    ctx.beginPath();ctx.moveTo(p.x1,p.y);ctx.lineTo(p.x2,p.y);
+    ctx.strokeStyle='rgba(0,163,224,'+op+')';ctx.lineWidth=1.2;ctx.stroke();
+  }
+  var steps=200;
+  function drawStrand(phaseOff,col){
+    for(var i=1;i<=steps;i++){
+      var t=i/steps,tp=(i-1)/steps;
+      var y=t*H,yp=tp*H;
+      var a=t*Math.PI*4+offset+phaseOff,ap=tp*Math.PI*4+offset+phaseOff;
+      var x=cx+Math.sin(a)*radius,xp=cx+Math.sin(ap)*radius;
+      var z=Math.cos(a);
+      var op=0.2+(z+1)*0.25;
+      var lw=0.8+(z+1)*0.8;
+      ctx.beginPath();ctx.moveTo(xp,yp);ctx.lineTo(x,y);
+      ctx.strokeStyle=col.replace('XXX',op);ctx.lineWidth=lw;ctx.stroke();
+    }
+  }
+  drawStrand(0,'rgba(0,119,182,XXX)');
+  drawStrand(Math.PI,'rgba(72,202,228,XXX)');
+  for(var i=0;i<pts.length;i++){
+    var p=pts[i];
+    var r1=2+(p.z1+1)*1.5,r2=2+(p.z2+1)*1.5;
+    var op1=0.3+(p.z1+1)*0.25,op2=0.3+(p.z2+1)*0.25;
+    ctx.beginPath();ctx.arc(p.x1,p.y,r1,0,Math.PI*2);
+    ctx.fillStyle=cols[p.i%4];ctx.globalAlpha=op1;ctx.fill();ctx.globalAlpha=1;
+    ctx.beginPath();ctx.arc(p.x2,p.y,r2,0,Math.PI*2);
+    ctx.fillStyle=cols[(p.i+2)%4];ctx.globalAlpha=op2;ctx.fill();ctx.globalAlpha=1;
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+})();
+</script>
+</div>
