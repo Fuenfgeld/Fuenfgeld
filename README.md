@@ -1,6 +1,5 @@
-![FUENFGELD](name.svg)
-![Neuro](neural_network.svg)
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=Fuenfgeld&mode=weekly)](https://git.io/streak-stats)
+![FUENFGELD](fuenfgeld_banner.svg)
+
 
 <!--
 **Fuenfgeld/Fuenfgeld** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
