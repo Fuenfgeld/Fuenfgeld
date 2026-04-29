@@ -1,4 +1,5 @@
 ![FUENFGELD](name.svg)
+![Neuro](neural_network.svg)
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=Fuenfgeld&mode=weekly)](https://git.io/streak-stats)
 
 <!--
